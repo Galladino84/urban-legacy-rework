@@ -1,2 +1,13 @@
-@import "global";
-@import "character_creation"
+@import "./globals/character_creation";
+//@import "./globals/mixins";
+//@import "./globals/typography";
+//@import "./globals/skeleton";
+
+// Importa i temi con struttura e variazioni
+@import "./themes/goth/theme";
+@import "./themes/goth/maschio";
+@import "./themes/goth/femmina";
+
+//@import "./themes/tabboz/theme";
+//@import "./themes/metallaro/theme";
+//@import "./themes/nerd/theme";

@@ -1,0 +1,23 @@
+@import "./variables";
+
+.tema_goth_femmina {
+    $background-color: #000000;
+    $typography-color: #ffffff;
+    $sidebar-left-background: #ffffff;
+    $sidebar-left-typography-color: #000000;
+
+    &.game-container {
+        background-color: $background-color;
+        color: $typography-color;
+
+        .sidebar, .sidebar-sinistra {
+            background-color: $sidebar-left-background;
+            color: $sidebar-left-typography-color;
+        }
+
+        .sidebar-sinistra {
+            background: $sidebar-left-background url('src/assets/themes/goth/sidebar_goth.png') center center repeat;
+        }
+
+    }
+}

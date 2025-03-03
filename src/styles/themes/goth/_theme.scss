@@ -1,0 +1,50 @@
+@import "../../globals/mixins";
+@import "./variables";
+
+.tema_goth {
+  
+    &.game-container {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        .sidebar {
+            width: 20%;
+            padding: 15px;
+            background-color: #f8f9fa;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            overflow-y: auto;
+            text-align: center;
+
+            &-sinistra {
+                left: 0;
+            }
+
+            &-destra {
+                right: 0;
+            }
+
+        }
+
+        .sezione-centrale {
+            position: fixed;
+            left: 20%;
+            right: 20%;
+            top: 0;
+            bottom: 0;
+            width: 60%;
+            color: #ffffff;
+            padding: 15px;
+            overflow: auto;
+        }
+
+    }
+
+
+}

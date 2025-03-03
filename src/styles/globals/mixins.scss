@@ -1,0 +1,33 @@
+// Mixin per i bottoni, cambia colore dinamicamente
+@mixin button-theme($primary, $text, $border) {
+    background-color: $primary;
+    color: $text;
+    border: 2px solid $border;
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  
+    &:hover {
+      background-color: darken($primary, 10%);
+      color: lighten($text, 10%);
+      border-color: darken($border, 10%);
+    }
+  }
+  
+  // Mixin per la tipografia
+  @mixin typography-theme($font, $color) {
+    font-family: $font;
+    color: $color;
+  }
+  
+  // Mixin per le card
+  @mixin card-theme($bg, $text, $border) {
+    background-color: $bg;
+    color: $text;
+    border: 2px solid $border;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  

@@ -1,0 +1,10 @@
+@import "./variables";
+
+.tema_goth_maschio {
+   $background-color: #000000;
+
+    &.game-container {
+        background-color: $background-color;
+    }
+
+}
