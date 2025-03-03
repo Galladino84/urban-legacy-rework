@@ -1,0 +1,11 @@
+{
+    "Goth": {
+      "Maschio": { "status": 3, "carisma": 6, "intelligenza": 7, "resistenza": 5, "fondi": 50 },
+      "Femmina": { "status": 3, "carisma": 7, "intelligenza": 6, "resistenza": 4, "fondi": 50 }
+    },
+    "Tabboz": {
+      "Maschio": { "status": 4, "carisma": 8, "intelligenza": 4, "resistenza": 7, "fondi": 100 },
+      "Femmina": { "status": 4, "carisma": 9, "intelligenza": 3, "resistenza": 6, "fondi": 100 }
+    }
+  }
+  

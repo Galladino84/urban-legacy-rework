@@ -1,0 +1,22 @@
+{
+  "Goth": {
+    "Maschio": { "madre": "Isabella" },
+    "Femmina": { "madre": "Raven" }
+  },
+  "Tabboz": {
+    "Maschio": { "padre": "Luigi", "madre": "Patrizia" },
+    "Femmina": { "padre": "Gianni", "madre": "Monica" }
+  },
+  "Metallaro": {
+    "Maschio": { "padre": "Ernesto" },
+    "Femmina": { "madre": "Valeria" }
+  },
+  "Nerd": {
+    "Maschio": { "madre": "Laura", "fratello": "Andrea" },
+    "Femmina": { "padre": "Marco", "sorella": "Giulia" }
+  },
+  "Trapper": {
+    "Maschio": { "padre": "Antonio", "sorella": "Serena" },
+    "Femmina": { "madre": "Vanessa", "fratello": "Stefano" }
+  }
+}

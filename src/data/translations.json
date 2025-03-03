@@ -1,0 +1,41 @@
+{
+    "it": {
+      "titolo": "Creazione Personaggio",
+      "nome": "Nome",
+      "cognome": "Cognome",
+      "sesso": "Sesso",
+      "percorso": "Percorso",
+      "orientamento_sessuale": "Orientamento Sessuale",
+      "strumento_musicale": "Strumento Musicale",
+      "status": "Status",
+      "carisma": "Carisma",
+      "intelligenza": "Intelligenza",
+      "resistenza": "Resistenza",
+      "fondi": "Fondi",
+      "avanti": "Avanti",
+      "indietro": "Indietro",
+      "conferma": "Conferma",
+      "lingua": "Lingua",
+      "band_name": "Nome della Band"
+    },
+    "en": {
+      "titolo": "Character Creation",
+      "nome": "Name",
+      "cognome": "Surname",
+      "sesso": "Gender",
+      "percorso": "Path",
+      "orientamento_sessuale": "Sexual Orientation",
+      "strumento_musicale": "Musical Instrument",
+      "status": "Status",
+      "carisma": "Charisma",
+      "intelligenza": "Intelligence",
+      "resistenza": "Stamina",
+      "fondi": "Funds",
+      "avanti": "Next",
+      "indietro": "Back",
+      "conferma": "Confirm",
+      "lingua": "Language",
+      "band_name": "Band Name"
+    }
+  }
+  

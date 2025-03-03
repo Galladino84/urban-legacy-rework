@@ -1,0 +1,15 @@
+{
+    "Goth": {
+      "Maschio": ["Voce", "Chitarra", "Basso"],
+      "Femmina": ["Voce", "Tastiera", "Violino Elettrico"]
+    },
+    "Metallaro": {
+      "Maschio": ["Chitarra", "Batteria", "Voce"],
+      "Femmina": ["Chitarra", "Basso", "Batteria"]
+    },
+    "Tabboz": {
+      "Maschio": ["DJ", "Vocalist"],
+      "Femmina": ["DJ", "Vocalist"]
+    }
+  }
+  

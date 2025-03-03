@@ -1,0 +1,23 @@
+{
+    "Goth": {
+      "Maschio": "goth_maschile.png",
+      "Femmina": "goth_femminile.png"
+    },
+    "Tabboz": {
+      "Maschio": "tabboz_maschile.png",
+      "Femmina": "tabboz_femminile.png"
+    },
+    "Metallaro": {
+      "Maschio": "metallaro_maschile.png",
+      "Femmina": "metallaro_femminile.png"
+    },
+    "Nerd": {
+      "Maschio": "nerd_maschile.png",
+      "Femmina": "nerd_femminile.png"
+    },
+    "Trapper": {
+      "Maschio": "trapper_maschile.png",
+      "Femmina": "trapper_femminile.png"
+    }
+  }
+  
