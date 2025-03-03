@@ -1,41 +1,39 @@
 {
     "it": {
-      "titolo": "Creazione Personaggio",
+      "titolo": "Creazione del Personaggio",
       "nome": "Nome",
       "cognome": "Cognome",
       "sesso": "Sesso",
       "percorso": "Percorso",
       "orientamento_sessuale": "Orientamento Sessuale",
-      "strumento_musicale": "Strumento Musicale",
-      "status": "Status",
-      "carisma": "Carisma",
-      "intelligenza": "Intelligenza",
-      "resistenza": "Resistenza",
-      "fondi": "Fondi",
+      "strumento_musicale": "Scegli lo Strumento Musicale",
+      "band_name": "Nome della Band",
+      "conferma": "Conferma",
       "avanti": "Avanti",
       "indietro": "Indietro",
-      "conferma": "Conferma",
+      "status": "Status",
       "lingua": "Lingua",
-      "band_name": "Nome della Band"
+      "none": "Nessuno",
+      "campo_obbligatorio": "Campo obbligatorio",
+      "seleziona_strumento": "Seleziona uno strumento valido"
     },
     "en": {
       "titolo": "Character Creation",
-      "nome": "Name",
-      "cognome": "Surname",
+      "nome": "First Name",
+      "cognome": "Last Name",
       "sesso": "Gender",
       "percorso": "Path",
       "orientamento_sessuale": "Sexual Orientation",
-      "strumento_musicale": "Musical Instrument",
-      "status": "Status",
-      "carisma": "Charisma",
-      "intelligenza": "Intelligence",
-      "resistenza": "Stamina",
-      "fondi": "Funds",
+      "strumento_musicale": "Choose Your Musical Instrument",
+      "band_name": "Band Name",
+      "conferma": "Confirm",
       "avanti": "Next",
       "indietro": "Back",
-      "conferma": "Confirm",
+      "status": "Status",
       "lingua": "Language",
-      "band_name": "Band Name"
+      "none": "None",
+      "campo_obbligatorio": "This field is required",
+      "seleziona_strumento": "Please select a valid instrument"
     }
   }
   
