@@ -28,18 +28,23 @@ const CharacterCreation = () => {
 
   const [errors, setErrors] = useState({});
 
+  // Ritorna lo slogan e la descrizione in base al percorso selezionato
+  const percorsoInfo = translations[lingua]?.[player.percorso];
+
   useEffect(() => {
-    setPlayer(prev => ({
-      ...prev,
-      avatar: prev.sesso && prev.percorso ? avatars[prev.percorso][prev.sesso] : "",
-      famiglia: prev.sesso && prev.percorso ? families[prev.percorso][prev.sesso] : {},
-      statistiche: prev.sesso && prev.percorso
-        ? {
-            ...stats[prev.percorso][prev.sesso],
-            maestria_musicale: prev.strumento ? stats[prev.percorso][prev.sesso].maestria_musicale[prev.strumento] || 0 : 0
-          }
-        : { status: 0, carisma: 0, intelligenza: 0, resistenza: 0, maestria_musicale: 0 }
-    }));
+    if (player.sesso && player.percorso) {
+      setPlayer(prev => ({
+        ...prev,
+        avatar: prev.sesso && prev.percorso ? avatars[prev.percorso][prev.sesso] : "",
+        famiglia: prev.sesso && prev.percorso ? families[prev.percorso][prev.sesso] : {},
+        statistiche: prev.sesso && prev.percorso
+          ? {
+              ...stats[prev.percorso][prev.sesso],
+              maestria_musicale: prev.strumento ? stats[prev.percorso][prev.sesso].maestria_musicale[prev.strumento] || 0 : 0
+            }
+          : { status: 0, carisma: 0, intelligenza: 0, resistenza: 0, maestria_musicale: 0 }
+      }));
+    }
   }, [player.sesso, player.percorso, player.strumento]);
 
   const handleChange = (e) => {
@@ -110,13 +115,6 @@ const CharacterCreation = () => {
       </div>
 
       <div className="main-panel">
-        <div className="preview-section">
-          <h3>{translations[lingua]?.percorso}</h3>
-          <p>{translations[lingua]?.percorso_placeholder}: {player.percorso}</p>
-          <p>{translations[lingua]?.sesso}: {player.sesso}</p>
-          <img src={`src/assets/avatars/${player.avatar}`} alt="Avatar Preview" className="avatar-preview" />
-        </div>
-
         {step === 1 && (
           <div>
             <h2>{translations[lingua]?.nome} & {translations[lingua]?.cognome}</h2>
@@ -169,6 +167,15 @@ const CharacterCreation = () => {
               <option value="Nerd">Nerd</option>
             </select>
             {errors.percorso && <div className="invalid-feedback">{errors.percorso}</div>}
+            
+            {/* Aggiungi la descrizione e slogan del percorso selezionato */}
+            {percorsoInfo && (
+              <div className="percorso-info">
+                <h4>{percorsoInfo.slogan}</h4>
+                <p>{percorsoInfo.descrizione}</p>
+              </div>
+            )}
+
             <button onClick={prevStep} className="btn btn-secondary">{translations[lingua]?.indietro}</button>
             <button onClick={nextStep} className="btn btn-primary">{translations[lingua]?.avanti}</button>
           </div>
