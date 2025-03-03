@@ -1,39 +1,80 @@
 {
-    "it": {
-      "titolo": "Creazione del Personaggio",
-      "nome": "Nome",
-      "cognome": "Cognome",
-      "sesso": "Sesso",
-      "percorso": "Percorso",
-      "orientamento_sessuale": "Orientamento Sessuale",
-      "strumento_musicale": "Scegli lo Strumento Musicale",
-      "band_name": "Nome della Band",
-      "conferma": "Conferma",
-      "avanti": "Avanti",
-      "indietro": "Indietro",
-      "status": "Status",
-      "lingua": "Lingua",
-      "none": "Nessuno",
-      "campo_obbligatorio": "Campo obbligatorio",
-      "seleziona_strumento": "Seleziona uno strumento valido"
+  "it": {
+    "titolo": "Creazione del Personaggio",
+    "nome": "Nome",
+    "cognome": "Cognome",
+    "sesso": "Sesso",
+    "percorso": "Percorso",
+    "orientamento_sessuale": "Orientamento Sessuale",
+    "strumento_musicale": "Scegli lo Strumento Musicale",
+    "band_name": "Nome della Band",
+    "campo_obbligatorio": "Campo obbligatorio",
+    "avanti": "Avanti",
+    "indietro": "Indietro",
+    "conferma": "Conferma",
+    "sesso_placeholder": "Seleziona il sesso",
+    "percorso_placeholder": "Seleziona il percorso",
+    "orientamento_placeholder": "Seleziona l'orientamento",
+    "strumento_placeholder": "Seleziona uno strumento",
+    "band_name_placeholder": "Nome della band",
+    "genera_nome": "Genera Nome",
+    "status": "Status",
+    "lingua": "Lingua",
+    "lingua_placeholder": "Seleziona la lingua",
+    "Goth": {
+      "slogan": "Un cammino nell'oscurità e nell'eleganza.",
+      "descrizione": "I Goth sono coloro che abbracciano l'oscurità, trovando bellezza nei toni cupi della vita. La loro arte e musica esprimono le sfumature più oscure dell'esistenza."
     },
-    "en": {
-      "titolo": "Character Creation",
-      "nome": "First Name",
-      "cognome": "Last Name",
-      "sesso": "Gender",
-      "percorso": "Path",
-      "orientamento_sessuale": "Sexual Orientation",
-      "strumento_musicale": "Choose Your Musical Instrument",
-      "band_name": "Band Name",
-      "conferma": "Confirm",
-      "avanti": "Next",
-      "indietro": "Back",
-      "status": "Status",
-      "lingua": "Language",
-      "none": "None",
-      "campo_obbligatorio": "This field is required",
-      "seleziona_strumento": "Please select a valid instrument"
+    "Tabboz": {
+      "slogan": "Vivi al massimo, conquista il mondo con il tuo stile.",
+      "descrizione": "Il percorso dei Tabboz rappresenta l'euforia del vivere tra moda e musica, in un'esplosione di energia e spirito di ribellione."
+    },
+    "Metallaro": {
+      "slogan": "Il potere del metallo, la forza del cuore.",
+      "descrizione": "I Metallari vivono per la musica e la libertà, amanti del rock pesante e delle atmosfere intense, sempre pronti a dare il massimo."
+    },
+    "Nerd": {
+      "slogan": "Strategia, intelligenza e passione per i giochi.",
+      "descrizione": "I Nerd si dedicano alla cultura pop e ai giochi, con una passione inarrestabile per i mondi immaginari e le tecnologie del futuro."
+    }
+  },
+  "en": {
+    "titolo": "Character Creation",
+    "nome": "First Name",
+    "cognome": "Last Name",
+    "sesso": "Gender",
+    "percorso": "Path",
+    "orientamento_sessuale": "Sexual Orientation",
+    "strumento_musicale": "Choose Your Musical Instrument",
+    "band_name": "Band Name",
+    "campo_obbligatorio": "Field is required",
+    "avanti": "Next",
+    "indietro": "Back",
+    "conferma": "Confirm",
+    "sesso_placeholder": "Select gender",
+    "percorso_placeholder": "Select path",
+    "orientamento_placeholder": "Select orientation",
+    "strumento_placeholder": "Select an instrument",
+    "band_name_placeholder": "Band name",
+    "genera_nome": "Generate Name",
+    "status": "Status",
+    "lingua": "Language",
+    "lingua_placeholder": "Select language",
+    "Goth": {
+      "slogan": "A journey into darkness and elegance.",
+      "descrizione": "Goths embrace darkness, finding beauty in the darker tones of life. Their art and music express the darkest shades of existence."
+    },
+    "Tabboz": {
+      "slogan": "Live to the fullest, conquer the world with your style.",
+      "descrizione": "The Tabboz path represents the euphoria of living between fashion and music, in an explosion of energy and rebellious spirit."
+    },
+    "Metallaro": {
+      "slogan": "The power of metal, the strength of the heart.",
+      "descrizione": "Metalheads live for music and freedom, lovers of heavy rock and intense atmospheres, always ready to give their all."
+    },
+    "Nerd": {
+      "slogan": "Strategy, intelligence, and a passion for games.",
+      "descrizione": "Nerds dedicate themselves to pop culture and games, with an unstoppable passion for imaginary worlds and future technologies."
     }
   }
-  
+}

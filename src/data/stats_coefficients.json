@@ -1,11 +1,96 @@
 {
-    "Goth": {
-      "Maschio": { "status": 3, "carisma": 6, "intelligenza": 7, "resistenza": 5, "fondi": 50 },
-      "Femmina": { "status": 3, "carisma": 7, "intelligenza": 6, "resistenza": 4, "fondi": 50 }
+  "Goth": {
+    "Maschio": {
+      "status": 2,
+      "carisma": 5,
+      "intelligenza": 4,
+      "resistenza": 3,
+      "maestria_musicale": {
+        "Chitarra": 3,
+        "Basso": 2,
+        "Voce": 4
+      }
     },
-    "Tabboz": {
-      "Maschio": { "status": 4, "carisma": 8, "intelligenza": 4, "resistenza": 7, "fondi": 100 },
-      "Femmina": { "status": 4, "carisma": 9, "intelligenza": 3, "resistenza": 6, "fondi": 100 }
+    "Femmina": {
+      "status": 3,
+      "carisma": 6,
+      "intelligenza": 5,
+      "resistenza": 4,
+      "maestria_musicale": {
+        "Tastiera": 4,
+        "Violino Elettrico": 3,
+        "Voce": 5
+      }
+    }
+  },
+  "Metallaro": {
+    "Maschio": {
+      "status": 3,
+      "carisma": 6,
+      "intelligenza": 5,
+      "resistenza": 4,
+      "maestria_musicale": {
+        "Chitarra": 4,
+        "Batteria": 3,
+        "Voce": 2
+      }
+    },
+    "Femmina": {
+      "status": 4,
+      "carisma": 7,
+      "intelligenza": 6,
+      "resistenza": 5,
+      "maestria_musicale": {
+        "Chitarra": 5,
+        "Batteria": 4,
+        "Basso": 3
+      }
+    }
+  },
+  "Tabboz": {
+    "Maschio": {
+      "status": 1,
+      "carisma": 4,
+      "intelligenza": 6,
+      "resistenza": 3,
+      "maestria_musicale": {
+        "DJ": 4,
+        "Vocalist": 3
+      }
+    },
+    "Femmina": {
+      "status": 2,
+      "carisma": 5,
+      "intelligenza": 5,
+      "resistenza": 4,
+      "maestria_musicale": {
+        "DJ": 4,
+        "Vocalist": 3
+      }
+    }
+  },
+  "Nerd": {
+    "Maschio": {
+      "status": 3,
+      "carisma": 4,
+      "intelligenza": 7,
+      "resistenza": 2,
+      "maestria_musicale": {
+        "Gaming Team": 2,
+        "GdR Cartaceo": 1,
+        "Cosplayer": 1
+      }
+    },
+    "Femmina": {
+      "status": 3,
+      "carisma": 5,
+      "intelligenza": 6,
+      "resistenza": 3,
+      "maestria_musicale": {
+        "Gaming Team": 2,
+        "GdR Cartaceo": 1,
+        "Cosplayer": 2
+      }
     }
   }
-  
+}

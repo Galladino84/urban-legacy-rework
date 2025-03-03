@@ -16,13 +16,13 @@ const CharacterCreation = () => {
   const [player, setPlayer] = useState({
     nome: "",
     cognome: "",
-    sesso: "Maschio",
+    sesso: "",
     percorso: "Goth",
     orientamento_sessuale: "Etero",
     strumento: "",
     band: "",
     avatar: "",
-    statistiche: { status: 0, carisma: 0, intelligenza: 0, resistenza: 0 },
+    statistiche: { status: 0, carisma: 0, intelligenza: 0, resistenza: 0, maestria_musicale: 0 },
     famiglia: {}
   });
 
@@ -31,11 +31,16 @@ const CharacterCreation = () => {
   useEffect(() => {
     setPlayer(prev => ({
       ...prev,
-      avatar: avatars[prev.percorso][prev.sesso],
-      famiglia: families[prev.percorso][prev.sesso],
-      statistiche: stats[prev.percorso][prev.sesso]
+      avatar: prev.sesso && prev.percorso ? avatars[prev.percorso][prev.sesso] : "",
+      famiglia: prev.sesso && prev.percorso ? families[prev.percorso][prev.sesso] : {},
+      statistiche: prev.sesso && prev.percorso
+        ? {
+            ...stats[prev.percorso][prev.sesso],
+            maestria_musicale: prev.strumento ? stats[prev.percorso][prev.sesso].maestria_musicale[prev.strumento] || 0 : 0
+          }
+        : { status: 0, carisma: 0, intelligenza: 0, resistenza: 0, maestria_musicale: 0 }
     }));
-  }, [player.sesso, player.percorso]);
+  }, [player.sesso, player.percorso, player.strumento]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -105,6 +110,13 @@ const CharacterCreation = () => {
       </div>
 
       <div className="main-panel">
+        <div className="preview-section">
+          <h3>{translations[lingua]?.percorso}</h3>
+          <p>{translations[lingua]?.percorso_placeholder}: {player.percorso}</p>
+          <p>{translations[lingua]?.sesso}: {player.sesso}</p>
+          <img src={`src/assets/avatars/${player.avatar}`} alt="Avatar Preview" className="avatar-preview" />
+        </div>
+
         {step === 1 && (
           <div>
             <h2>{translations[lingua]?.nome} & {translations[lingua]?.cognome}</h2>
@@ -139,6 +151,7 @@ const CharacterCreation = () => {
               className={`form-control ${errors.sesso ? 'is-invalid' : ''}`}
               value={player.sesso}
             >
+              <option value="">{translations[lingua]?.sesso_placeholder}</option>
               <option value="Maschio">Maschio</option>
               <option value="Femmina">Femmina</option>
             </select>
@@ -149,6 +162,7 @@ const CharacterCreation = () => {
               className={`form-control ${errors.percorso ? 'is-invalid' : ''}`}
               value={player.percorso}
             >
+              <option value="">{translations[lingua]?.percorso_placeholder}</option>
               <option value="Goth">Goth</option>
               <option value="Tabboz">Tabboz</option>
               <option value="Metallaro">Metallaro</option>
@@ -169,6 +183,7 @@ const CharacterCreation = () => {
               className={`form-control ${errors.orientamento_sessuale ? 'is-invalid' : ''}`}
               value={player.orientamento_sessuale}
             >
+              <option value="">{translations[lingua]?.orientamento_placeholder}</option>
               <option value="Etero">Eterosessuale</option>
               <option value="Bisessuale">Bisessuale</option>
               <option value="Omosessuale">Omosessuale</option>
@@ -188,6 +203,7 @@ const CharacterCreation = () => {
               className={`form-control ${errors.strumento ? 'is-invalid' : ''}`}
               value={player.strumento}
             >
+              <option value="">{translations[lingua]?.strumento_placeholder}</option>
               {instruments[player.percorso][player.sesso].map(instr => (
                 <option key={instr} value={instr}>{instr}</option>
               ))}
@@ -210,7 +226,7 @@ const CharacterCreation = () => {
               value={player.band}
             />
             {errors.band && <div className="invalid-feedback">{errors.band}</div>}
-            <button onClick={handleBandName} className="btn btn-info">Genera Nome</button>
+            <button onClick={handleBandName} className="btn btn-info">{translations[lingua]?.genera_nome}</button>
             <button onClick={prevStep} className="btn btn-secondary">{translations[lingua]?.indietro}</button>
             <button onClick={nextStep} className="btn btn-primary">{translations[lingua]?.avanti}</button>
           </div>
