@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
+const SidebarSinistra = ({ player, onOpenInventory }) => {
+  const [aspettoPet, setAspettoPet] = useState(player.pet?.immagine.replace(".png", "") || "cat1");
 
-const SidebarSinistra = ({ player }) => {
   if (!player) return null;
 
-  // Assicura che lo status sia compreso tra 0 e 5
-  const status = Math.max(0, Math.min(player.statistiche.status ?? 1, 5));
-  const stellePiene = "★".repeat(status);
-  const stelleVuote = "☆".repeat(5 - status);
+  const cambiaAspetto = (aspetto) => {
+    setAspettoPet(aspetto);
+    const updatedPlayer = { ...player, pet: { ...player.pet, immagine: `${aspetto}.png` } };
+    localStorage.setItem("urban_legacy_player", JSON.stringify(updatedPlayer));
+  };
 
-  // Controllo pet (se presente)
-  const hasPet = player.pet?.nome && player.pet?.affinita !== undefined;
-  const affinitaPet = hasPet ? Math.max(0, Math.min(player.pet.affinita, 100)) : null;
+  const getProgressBarColor = (affinita) => {
+    if (affinita < 40) return "bg-danger";
+    if (affinita < 60) return "bg-warning";
+    return "bg-success";
+  };
 
   return (
     <div className="sidebar sidebar-sinistra">
@@ -37,16 +43,8 @@ const SidebarSinistra = ({ player }) => {
       {/* Fondi e status */}
       <div className="info-giocatore">
         <p><strong>Fondi (€):</strong> {player.fondi ?? 40}</p>
-        <p><strong>Status:</strong> {stellePiene}{stelleVuote}</p>
+        <p><strong>Status:</strong> {"★".repeat(player.statistiche.status ?? 1) + "☆".repeat(5 - (player.statistiche.status ?? 1))}</p>
       </div>
-
-      {/* Mostra Affinità Pet se il pet è stato adottato */}
-      {hasPet && (
-        <div className="pet-info">
-          <p><strong>🐾 {player.pet.nome}</strong></p>
-          <p><strong>Affinità:</strong> {affinitaPet}/100</p>
-        </div>
-      )}
 
       {/* Accordion per le statistiche */}
       <div className="accordion" id="accordionStats">
@@ -109,25 +107,94 @@ const SidebarSinistra = ({ player }) => {
                   <p><strong>Strumento:</strong> {player.strumento}</p>
                 </>
               ) : player.percorso === "Nerd" ? (
-                player.tipo_gamer === "Videogiocatore" ? (
-                  <>
-                    <p><strong>Genere preferito:</strong> {player.genere_videogiochi}</p>
-                    <p><strong>Piattaforma:</strong> {player.piattaforma}</p>
-                  </>
-                ) : player.tipo_gamer === "Giocatore di Ruolo" ? (
-                  <>
-                    <p><strong>GDR preferito:</strong> {player.gdr_preferito}</p>
-                    <p><strong>Ruolo abituale:</strong> {player.ruolo_gdr}</p>
-                  </>
-                ) : (
-                  <p>Nessuna informazione specifica per questo percorso.</p>
-                )
+                <p><strong>Tipo di Nerd:</strong> {player.tipo_gamer}</p>
               ) : (
                 <p>Nessuna informazione specifica per questo percorso.</p>
               )}
             </div>
           </div>
         </div>
+      </div>
+
+      {/* 🐱 Se il giocatore ha un pet, mostra il box con l'affinità */}
+      {player.pet && (
+        <div className="accordion" id="accordionPet">
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="headingPet">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapsePet"
+                aria-expanded="false"
+                aria-controls="collapsePet"
+              >
+                Il tuo Pet: {player.pet.nome}
+              </button>
+            </h2>
+            <div
+              id="collapsePet"
+              className="accordion-collapse collapse"
+              aria-labelledby="headingPet"
+              data-bs-parent="#accordionPet"
+            >
+              <div className="accordion-body text-center">
+                <img
+                  src={`/src/assets/pets/${aspettoPet}.png`}
+                  alt="Pet"
+                  className="pet-avatar"
+                />
+                <p>
+                  <strong>Affinità:</strong> {player.pet.affinita}/100
+                  <span
+                    className="ms-2"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="L'affinità del pet aumenta con le interazioni e il tempo!"
+                  >
+                    🛈
+                  </span>
+                </p>
+
+                {/* Barra di progressione animata */}
+                <div className="progress">
+                  <div
+                    className={`progress-bar progress-bar-striped progress-bar-animated ${getProgressBarColor(player.pet.affinita)}`}
+                    role="progressbar"
+                    style={{ width: `${player.pet.affinita}%` }}
+                    aria-valuenow={player.pet.affinita}
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+
+                {/* Bottoni radio con anteprima mini del pet */}
+                <div className="pet-selection mt-2 d-flex justify-content-center">
+                  {["cat1", "cat2", "cat3"].map((cat) => (
+                    <label key={cat} className="d-flex flex-column align-items-center mx-2">
+                      <input
+                        type="radio"
+                        name="petAspetto"
+                        value={cat}
+                        checked={aspettoPet === cat}
+                        onChange={() => cambiaAspetto(cat)}
+                        className=""
+                      />
+                      <img src={`/src/assets/pets/${cat}.png`} alt={cat} className="pet-thumbnail" />
+                    </label>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 🗃️ Bottone per aprire l'inventario */}
+      <div className="inventory-button-container mt-3">
+        <button className="btn btn-primary w-100" onClick={onOpenInventory}>
+          📦 Apri Inventario
+        </button>
       </div>
     </div>
   );
